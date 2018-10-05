@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Role.create!(name: 'admin')
+puts 'Role Admin created'
+Role.create!(name: 'client')
+puts 'Role Client created'
+
+admin = User.new(email: 'paolavrgsm@gmail.com', password: '12345678', password_confirmation: '12345678')
+if admin.save
+  puts 'User admin has been created'
+  admin.add_role :admin
+else
+  puts 'Something went wrong pero no sabemos que es'
+end
