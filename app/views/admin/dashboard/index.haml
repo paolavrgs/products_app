@@ -1,1 +1,53 @@
-%h1 hola admin
+!!!
+%html{lang: "en"}
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
+    %meta{charset: "UTF-8"}/
+    %title Admin
+    %link{href: "assets/icons/favicon.png", rel: "icon", type: "image/png"}
+    %link{:href => "assets/bootstrap.min.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "assets/animate.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "assets/animsition.min.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "assets/select2.min.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "assets/slick.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "assets/util.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "assets/main.css", :rel => "stylesheet", :type => "text/css"}/
+  %body.animsition
+    / Header
+    %header.header3
+      / Header desktop
+      .container-menu-header-v3
+        .wrap_header3.p-t-74
+          / Logo
+          %a.logo3{href: "index.html"}
+            %img{alt: "IMG-LOGO", src: "assets/icons/logo.png"}/
+          / Header Icon
+          .header-icons3.p-t-38.p-b-60.p-l-8
+            %a.header-wrapicon1.dis-block{href: "#"}
+              %img.header-icon1{alt: "ICON", src: "assets/icons/icon-header-01.png"}
+              = current_user.email
+          / Menu
+          .wrap_menu
+            %nav.menu
+              %ul.main_menu
+                %li
+                  %a{href: "index.html"} Home
+                %li
+                  %a{href: "product.html"} Productos
+                %li
+                  %a{href: "product.html"} Pedidos Recibidos
+        .bottombar.flex-col-c.p-b-65
+          .bottombar-social.t-center.p-b-8
+            %a.topbar-social-item.fa.fa-facebook{href: "#"}
+            %a.topbar-social-item.fa.fa-instagram{href: "#"}
+            %a.topbar-social-item.fa.fa-pinterest-p{href: "#"}
+            %a.topbar-social-item.fa.fa-snapchat-ghost{href: "#"}
+            %a.topbar-social-item.fa.fa-youtube-play{href: "#"}
+    %script{:src => "https://use.fontawesome.com/70a3cb5d53.js"}
+    %script{:src => "https://code.jquery.com/jquery-3.3.1.min.js", :type => "text/javascript"}
+    %script{:src => "assets/animsition.min.js", :type => "text/javascript"}
+    %script{:src => "assets/popper.min.js", :type => "text/javascript"}
+    %script{:src => "assets/bootstrap.min.js", :type => "text/javascript"}
+    %script{:src => "assets/select2.min.js", :type => "text/javascript"}
+    %script{:src => "assets/main.js"}

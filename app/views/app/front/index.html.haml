@@ -5,24 +5,16 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     %title Home
-    %link{:href => "assets/icons/favicon.png", :rel => "icon", :type => "image/png"}
+    %link{href: "assets/icons/favicon.png", rel: "icon", type: "image/png"}
     %link{:href => "assets/bootstrap.min.css", :rel => "stylesheet", :type => "text/css"}/
-    -# %link{:href => "fonts/themify/themify-icons.css", :rel => "stylesheet", :type => "text/css"}/
-    -# %link{:href => "fonts/Linearicons-Free-v1.0.0/icon-font.min.css", :rel => "stylesheet", :type => "text/css"}/
-    -# %link{:href => "fonts/elegant-font/html-css/style.css", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "assets/animate.css", :rel => "stylesheet", :type => "text/css"}/
-    -# %link{:href => "vendor/css-hamburgers/hamburgers.min.css", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "assets/animsition.min.css", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "assets/select2.min.css", :rel => "stylesheet", :type => "text/css"}/
-    -# %link{:href => "vendor/daterangepicker/daterangepicker.css", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "assets/slick.css", :rel => "stylesheet", :type => "text/css"}/
-    -# %link{:href => "vendor/lightbox2/css/lightbox.min.css", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "assets/util.css", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "assets/main.css", :rel => "stylesheet", :type => "text/css"}/
   %body.animsition
-    / Header
     %header.header1
-      / Header desktop
       .container-menu-header
         .topbar
           .topbar-social
@@ -35,7 +27,7 @@
             %span.topbar-email
               - unless current_user.nil?
                 = current_user.email
-            %a.header-wrapicon1.dis-block{:href => "#"}
+            %a.header-wrapicon1.dis-block{:href => "#{current_user.has_role?(:client) ? '' : '/admin' }"}
               %img.header-icon1{:alt => "ICON", :src => "assets/icons/icon-header-01.png"}/
             %span.linedivide1
             .header-wrapicon2
