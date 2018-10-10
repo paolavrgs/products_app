@@ -2029,7 +2029,7 @@ li.sale-noti > a {
 .table-shopping-cart {
   border-collapse: collapse;
   width: 100%;
-  min-width: 992px;
+  /* min-width: 992px; */
 }
 
 .table-shopping-cart .table-row {
@@ -2063,8 +2063,7 @@ li.sale-noti > a {
   color: #555555;
   line-height: 1.5;
   text-transform: uppercase;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 10px 20px;
 }
 
 .table-shopping-cart td {
@@ -2072,8 +2071,7 @@ li.sale-noti > a {
   font-size: 16px;
   color: #555555;
   line-height: 1.5;
-  padding-top: 37px;
-  padding-bottom: 30px;
+  padding: 20px;
 }
 
 .table-shopping-cart .table-row .column-2 {

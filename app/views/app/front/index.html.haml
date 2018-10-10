@@ -208,11 +208,11 @@
         / Slide2
         .wrap-slick2
           .slick2
-            - 5.times do
+            - @products.map do |product|
               .item-slick2.p-l-15.p-r-15
                 .block2
                   .block2-img.wrap-pic-w.of-hidden.pos-relative.block2-labelnew
-                    %img{:alt => "IMG-PRODUCT", :src => "assets/item-02.jpg"}/
+                    = image_tag product.cover_image
                     .block2-overlay.trans-0-4
                       %a.block2-btn-addwishlist.hov-pointer.trans-0-4{:href => "#"}
                         %i.icon-wishlist.icon_heart_alt{"aria-hidden" => "true"}
@@ -222,9 +222,9 @@
                           Add to Cart
                   .block2-txt.p-t-20
                     %a.block2-name.dis-block.s-text3.p-b-5{:href => "product-detail.html"}
-                      Herschel supply co 25l
+                      = product.title
                     %span.block2-price.m-text6.p-r-5
-                      $75.00
+                      = number_to_currency(product.price, locale: :en)
     / Modal
     #loginModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "-1"}
       .modal-dialog{:role => "document"}

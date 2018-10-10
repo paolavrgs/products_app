@@ -3711,7 +3711,7 @@ SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE
 /*[ Background ]
 ///////////////////////////////////////////////////////////
 */
-.bg0 {background-color: #e65540;}
+.bg0 {background-color: #e65540;color: white;}
 .bg1 {background-color: #222222;}
 .bg3 {background-color: rgba(255,255,255,0.95);}
 .bg4 {background-color: #111111;}
@@ -3995,6 +3995,11 @@ EFFECT   EFFECT   EFFECT   EFFECT   EFFECT   EFFECT  EFFECT
 .hov6:hover {
 	color: white;
 	text-decoration: underline;
+}
+
+.hov7:hover {
+	background-color: white;
+	color: #e65540;
 }
 
 /*[ Active ]
