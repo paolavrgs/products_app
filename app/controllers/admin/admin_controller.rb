@@ -1,6 +1,7 @@
 module Admin
   class AdminController < ::ApplicationController
     before_action :verify_role
+    layout 'admin/layouts/application'
 
     private
 

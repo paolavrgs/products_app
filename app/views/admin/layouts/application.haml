@@ -2,11 +2,43 @@
 %html
   %head
     %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
-    %title Myapp
+    %title Admin
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %h1 Admin Layout
-    = yield
+    %header.header3
+      .container-menu-header-v3
+        .wrap_header3.p-t-74
+          %a.logo3{href: "/"}
+            %img{alt: "IMG-LOGO", src: "../assets/icons/logo.png"}/
+          .header-icons3.p-t-38.p-b-60.p-l-8
+            %a.header-wrapicon1.dis-block{href: "#"}
+              %img.header-icon1{alt: "ICON", src: "../assets/icons/icon-header-01.png"}
+              = current_user.email
+          .wrap_menu
+            %nav.menu
+              %ul.main_menu
+                %li
+                  %a{href: "/"} Home
+                %li
+                  = link_to 'Productos', admin_products_path
+                %li
+                  %a{href: "#"} Pedidos Recibidos
+        .bottombar.flex-col-c.p-b-65
+          .bottombar-social.t-center.p-b-8
+            %a.topbar-social-item.fa.fa-facebook{href: "#"}
+            %a.topbar-social-item.fa.fa-instagram{href: "#"}
+            %a.topbar-social-item.fa.fa-pinterest-p{href: "#"}
+            %a.topbar-social-item.fa.fa-snapchat-ghost{href: "#"}
+            %a.topbar-social-item.fa.fa-youtube-play{href: "#"}
+    %section.admin-wrapper
+      = yield
+    %script{:src => "https://use.fontawesome.com/70a3cb5d53.js"}
+    %script{:src => "https://code.jquery.com/jquery-3.3.1.min.js", :type => "text/javascript"}
+    %script{:src => "assets/animsition.min.js", :type => "text/javascript"}
+    %script{:src => "assets/popper.min.js", :type => "text/javascript"}
+    %script{:src => "assets/bootstrap.min.js", :type => "text/javascript"}
+    %script{:src => "assets/select2.min.js", :type => "text/javascript"}
+    %script{:src => "assets/main.js"}

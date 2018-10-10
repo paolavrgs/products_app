@@ -1,0 +1,22 @@
+%p#notice= notice
+
+= image_tag @product.cover_image.variant(resize: "200x200" )
+
+%p
+  %b Title:
+  = @product.title
+%p
+  %b Description:
+  = @product.description
+%p
+  %b Price:
+  = @product.price
+
+- @product.uploads.each do |upload|
+  - if upload.variable?
+    = image_tag upload.variant(resize: "200x200" )
+  - elsif upload.previewable?
+    = image_tag upload.preview(resize: "200x200" )
+
+= link_to 'Edit', edit_admin_product_path(@product)
+= link_to 'Back', admin_products_path
