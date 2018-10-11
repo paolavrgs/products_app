@@ -3011,7 +3011,13 @@
 /*=========================================================
 TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 =========================================================*/
+.colorwhite {
+	color: white !important;
+}
 
+.colorwhite:hover {
+	color: #e65540;
+}
 /*[ S-Text 0 - 15 ]
 ///////////////////////////////////////////////////////////
 */
@@ -3711,7 +3717,7 @@ SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE
 /*[ Background ]
 ///////////////////////////////////////////////////////////
 */
-.bg0 {background-color: #e65540;color: white;}
+.bg0 {background-color: #e65540; color: white;}
 .bg1 {background-color: #222222;}
 .bg3 {background-color: rgba(255,255,255,0.95);}
 .bg4 {background-color: #111111;}
@@ -3730,7 +3736,7 @@ SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE
 /*[  ]
 -----------------------------------------------------------
 */
-.bg0-hov:hover {background-color: #e65540;}
+.bg0-hov:hover {background-color: white; color: #e65540; }
 
 
 

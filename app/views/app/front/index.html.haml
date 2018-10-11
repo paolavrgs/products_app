@@ -74,21 +74,22 @@
         .wrap_header
           / Logo
           %a.logo{:href => "index.html"}
-            %img{:alt => "IMG-LOGO", :src => "assets/icons/logo.png"}/
+            %img{:alt => "IMG-LOGO", :src => "assets/logo_rosado.png"}/
           / Menu
           .wrap-menu
             .main_menu
               - if user_signed_in?
-                = link_to 'Sign out', destroy_session_path(current_user), method: :delete, class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bgwhite hov1 trans-0-4"
+                = link_to 'Sign out', destroy_session_path(current_user), method: :delete, class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4"
               - else
-                = link_to 'Sign up', new_user_registration_path, class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bgwhite hov1 trans-0-4"
-                %a{ href: '#', "data-toggle" => "modal", "data-target" => "#loginModal", class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bgwhite hov1 trans-0-4" } Log in
+                -# = link_to 'Sign up', new_user_registration_path, class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4"
+                %button{ href: '#', "data-toggle" => "modal", "data-target" => "#signupModal", class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4" } Sign up
+                %button{ href: '#', "data-toggle" => "modal", "data-target" => "#loginModal", class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4" } Log in
                 -# = link_to 'Login', new_user_session_path, class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bgwhite hov1 trans-0-4"
       / Header Mobile
       .wrap_header_mobile
         / Logo moblie
         %a.logo-mobile{:href => "index.html"}
-          %img{:alt => "IMG-LOGO", :src => "assets/icons/logo.png"}/
+          %img{:alt => "IMG-LOGO", :src => "assets/logo_rosado.png"}/
         / Button show menu
         .btn-show-menu
           / Header Icon mobile
@@ -230,12 +231,11 @@
       .modal-dialog{:role => "document"}
         .modal-content
           .modal-header
-            %h5#exampleModalLabel.modal-title Modal title
+            %h5#exampleModalLabel.modal-title Inicio de Sesión
             %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
               %span{"aria-hidden" => "true"} ×
           .modal-body
-            %h2 Log in
-            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
               .field
                 = f.label :email
                 %br/
@@ -249,8 +249,35 @@
                   = f.check_box :remember_me
                   = f.label :remember_me
               .actions
-                = f.submit "Log in"
+                = f.submit "Entrar", class: 'p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4'
             = render "devise/shared/links"
+    #signupModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "-1"}
+      .modal-dialog{:role => "document"}
+        .modal-content
+          .modal-header
+            %h5#exampleModalLabel.modal-title Registro de Usuario
+            %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+              %span{"aria-hidden" => "true"} ×
+          .modal-body
+            = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+              = devise_error_messages!
+              .field
+                = f.label :email
+                %br/
+                = f.email_field :email, autofocus: true, autocomplete: "email"
+              .field
+                = f.label :password
+                - if @minimum_password_length
+                  %em
+                    (#{@minimum_password_length} characters minimum)
+                %br/
+                = f.password_field :password, autocomplete: "new-password"
+              .field
+                = f.label :password_confirmation
+                %br/
+                = f.password_field :password_confirmation, autocomplete: "new-password"
+              .actions
+                = f.submit "Registrar", class: 'p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4'
     / Footer
     %footer.bg6.p-t-45.p-b-43.p-l-45.p-r-45
       .flex-w.p-b-90

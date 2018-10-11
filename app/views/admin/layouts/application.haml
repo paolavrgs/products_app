@@ -2,7 +2,7 @@
 %html
   %head
     %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
-    %title Admin
+    %title Moccadmin
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -12,8 +12,8 @@
       .container-menu-header-v3
         .wrap_header3.p-t-74
           %a.logo3{href: "/"}
-            %img{alt: "IMG-LOGO", src: "../assets/icons/logo.png"}/
-          .header-icons3.p-t-38.p-b-60.p-l-8
+            %img{alt: "IMG-LOGO", src: "../assets/logo_rosado.png"}/
+          .header-icons3.p-t-38.p-b-40
             %a.header-wrapicon1.dis-block{href: "#"}
               %img.header-icon1{alt: "ICON", src: "../assets/icons/icon-header-01.png"}
               = current_user.email
@@ -27,6 +27,8 @@
                 %li
                   %a{href: "#"} Pedidos Recibidos
         .bottombar.flex-col-c.p-b-65
+          %a.logo3{href: "/"}
+            %img{alt: "IMG-LOGO", src: "../assets/moccadmin/mocca-logo_mocca.png"}/
           .bottombar-social.t-center.p-b-8
             %a.topbar-social-item.fa.fa-facebook{href: "#"}
             %a.topbar-social-item.fa.fa-instagram{href: "#"}
@@ -36,9 +38,9 @@
     %section.admin-wrapper
       = yield
     %script{:src => "https://use.fontawesome.com/70a3cb5d53.js"}
-    %script{:src => "https://code.jquery.com/jquery-3.3.1.min.js", :type => "text/javascript"}
-    %script{:src => "assets/animsition.min.js", :type => "text/javascript"}
-    %script{:src => "assets/popper.min.js", :type => "text/javascript"}
-    %script{:src => "assets/bootstrap.min.js", :type => "text/javascript"}
-    %script{:src => "assets/select2.min.js", :type => "text/javascript"}
-    %script{:src => "assets/main.js"}
+    -# %script{:src => "https://code.jquery.com/jquery-3.3.1.min.js", :type => "text/javascript"}
+    -# %script{:src => "assets/animsition.min.js", :type => "text/javascript"}
+    -# %script{:src => "assets/popper.min.js", :type => "text/javascript"}
+    -# %script{:src => "assets/bootstrap.min.js", :type => "text/javascript"}
+    -# %script{:src => "assets/select2.min.js", :type => "text/javascript"}
+    -# %script{:src => "assets/main.js"}
