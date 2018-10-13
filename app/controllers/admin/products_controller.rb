@@ -70,7 +70,7 @@ module Admin
   
       # Never trust parameters from the scary internet, only allow the white list through.
       def product_params
-        params.require(:product).permit(:title, :description, :price, :cover_image, uploads: [])
+        params.require(:product).permit(:title, :description, :price, :stock, uploads: [])
       end
   end  
 end

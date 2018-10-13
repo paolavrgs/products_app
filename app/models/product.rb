@@ -1,4 +1,4 @@
 class Product < ApplicationRecord
-  has_one_attached :cover_image
   has_many_attached :uploads
+  validates :uploads, presence: true, blob: { content_type: :image }
 end

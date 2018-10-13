@@ -1,7 +1,7 @@
-%h1 Editing product
+= link_to admin_products_path do
+  %i.fa.fa-arrow-left
+  Volver
+%h4.m-text26.p-b-36.p-t-15
+  Editar Producto
 
 = render 'form'
-
-= link_to 'Show', [:admin, @product]
-\|
-= link_to 'Back', admin_products_path

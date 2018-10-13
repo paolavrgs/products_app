@@ -19,10 +19,11 @@
         .wrap_header3.p-t-74
           %a.logo3{href: "/"}
             %img{alt: "IMG-LOGO", src: "assets/logo_rosado.png"}/
-          .header-icons3.p-t-38.p-b-40
+          .header-icons3.p-t-38
             %a.header-wrapicon1.dis-block{href: "#"}
               %img.header-icon1{alt: "ICON", src: "assets/icons/icon-header-01.png"}
               = current_user.email
+          = link_to 'Cerrar Sesión', destroy_session_path(current_user), method: :delete, class: "p-l-15 p-r-15 p-t-8 p-b-40 flex-c-m bo-rad-23 hov7 trans-0-4"
           .wrap_menu
             %nav.menu
               %ul.main_menu
@@ -31,17 +32,10 @@
                 %li
                   = link_to 'Productos', admin_products_path
                 %li
-                  %a{href: "#"} Pedidos Recibidos
+                  %a{href: "#"} Cotizaciones
         .bottombar.flex-col-c.p-b-65
           %a.logo3{href: "/"}
-            %img{alt: "IMG-LOGO", src: "assets/moccadmin/mocca-logo_mocca.png"}/
-          .bottombar-social.t-center.p-b-8
-            %a.topbar-social-item.fa.fa-facebook{href: "#"}
-            %a.topbar-social-item.fa.fa-instagram{href: "#"}
-            %a.topbar-social-item.fa.fa-pinterest-p{href: "#"}
-            %a.topbar-social-item.fa.fa-snapchat-ghost{href: "#"}
-            %a.topbar-social-item.fa.fa-youtube-play{href: "#"}
-    %section.admin-wrapper
+            %img{alt: "IMG-LOGO", src: "assets/moccadmin/mocca-logo_mocca.png"}
 
     %script{:src => "https://use.fontawesome.com/70a3cb5d53.js"}
     %script{:src => "https://code.jquery.com/jquery-3.3.1.min.js", :type => "text/javascript"}

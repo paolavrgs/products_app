@@ -29,48 +29,48 @@
                 = current_user.email
             %a.header-wrapicon1.dis-block{:href => "#{current_user.nil? || current_user.has_role?(:client) ? '' : '/admin' }"}
               %img.header-icon1{:alt => "ICON", :src => "assets/icons/icon-header-01.png"}/
-            %span.linedivide1
-            .header-wrapicon2
-              %img.header-icon1.js-show-header-dropdown{:alt => "ICON", :src => "assets/icons/icon-header-02.png"}/
-              %span.header-icons-noti 0
-              / Header cart noti
-              .header-cart.header-dropdown
-                %ul.header-cart-wrapitem
-                  %li.header-cart-item
-                    .header-cart-item-img
-                      %img{:alt => "IMG", :src => "assets/item-cart-01.jpg"}/
-                    .header-cart-item-txt
-                      %a.header-cart-item-name{:href => "#"}
-                        White Shirt With Pleat Detail Back
-                      %span.header-cart-item-info
-                        1 x $19.00
-                  %li.header-cart-item
-                    .header-cart-item-img
-                      %img{:alt => "IMG", :src => "assets/item-cart-02.jpg"}/
-                    .header-cart-item-txt
-                      %a.header-cart-item-name{:href => "#"}
-                        Converse All Star Hi Black Canvas
-                      %span.header-cart-item-info
-                        1 x $39.00
-                  %li.header-cart-item
-                    .header-cart-item-img
-                      %img{:alt => "IMG", :src => "assets/item-cart-03.jpg"}/
-                    .header-cart-item-txt
-                      %a.header-cart-item-name{:href => "#"}
-                        Nixon Porter Leather Watch In Tan
-                      %span.header-cart-item-info
-                        1 x $17.00
-                .header-cart-total
-                  Total: $75.00
-                .header-cart-buttons
-                  .header-cart-wrapbtn
-                    / Button
-                    %a.flex-c-m.size1.bg1.bo-rad-20.hov1.s-text1.trans-0-4{:href => "cart.html"}
-                      View Cart
-                  .header-cart-wrapbtn
-                    / Button
-                    %a.flex-c-m.size1.bg1.bo-rad-20.hov1.s-text1.trans-0-4{:href => "#"}
-                      Check Out
+            -# %span.linedivide1
+            -# .header-wrapicon2
+            -#   %img.header-icon1.js-show-header-dropdown{:alt => "ICON", :src => "assets/icons/icon-header-02.png"}/
+            -#   %span.header-icons-noti 0
+            -#   / Header cart noti
+            -#   .header-cart.header-dropdown
+            -#     %ul.header-cart-wrapitem
+            -#       %li.header-cart-item
+            -#         .header-cart-item-img
+            -#           %img{:alt => "IMG", :src => "assets/item-cart-01.jpg"}/
+            -#         .header-cart-item-txt
+            -#           %a.header-cart-item-name{:href => "#"}
+            -#             White Shirt With Pleat Detail Back
+            -#           %span.header-cart-item-info
+            -#             1 x $19.00
+            -#       %li.header-cart-item
+            -#         .header-cart-item-img
+            -#           %img{:alt => "IMG", :src => "assets/item-cart-02.jpg"}/
+            -#         .header-cart-item-txt
+            -#           %a.header-cart-item-name{:href => "#"}
+            -#             Converse All Star Hi Black Canvas
+            -#           %span.header-cart-item-info
+            -#             1 x $39.00
+            -#       %li.header-cart-item
+            -#         .header-cart-item-img
+            -#           %img{:alt => "IMG", :src => "assets/item-cart-03.jpg"}/
+            -#         .header-cart-item-txt
+            -#           %a.header-cart-item-name{:href => "#"}
+            -#             Nixon Porter Leather Watch In Tan
+            -#           %span.header-cart-item-info
+            -#             1 x $17.00
+            -#     .header-cart-total
+            -#       Total: $75.00
+            -#     .header-cart-buttons
+            -#       .header-cart-wrapbtn
+            -#         / Button
+            -#         %a.flex-c-m.size1.bg1.bo-rad-20.hov1.s-text1.trans-0-4{:href => "cart.html"}
+            -#           View Cart
+            -#       .header-cart-wrapbtn
+            -#         / Button
+            -#         %a.flex-c-m.size1.bg1.bo-rad-20.hov1.s-text1.trans-0-4{:href => "#"}
+            -#           Check Out
         .wrap_header
           / Logo
           %a.logo{:href => "index.html"}
@@ -79,11 +79,11 @@
           .wrap-menu
             .main_menu
               - if user_signed_in?
-                = link_to 'Sign out', destroy_session_path(current_user), method: :delete, class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4"
+                = link_to 'Cerrar Sesión', destroy_session_path(current_user), method: :delete, class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4"
               - else
                 -# = link_to 'Sign up', new_user_registration_path, class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4"
-                %button{ href: '#', "data-toggle" => "modal", "data-target" => "#signupModal", class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4" } Sign up
-                %button{ href: '#', "data-toggle" => "modal", "data-target" => "#loginModal", class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4" } Log in
+                %button{ href: '#', "data-toggle" => "modal", "data-target" => "#signupModal", class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4" } Registrar
+                %button{ href: '#', "data-toggle" => "modal", "data-target" => "#loginModal", class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4" } Iniciar Sesión
                 -# = link_to 'Login', new_user_session_path, class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bgwhite hov1 trans-0-4"
       / Header Mobile
       .wrap_header_mobile
@@ -186,7 +186,7 @@
             %li.item-menu-mobile
               %a{:href => "contact.html"} Contact
     / Slide1
-    %section.slide1
+    -# %section.slide1
       .wrap-slick1
         .slick1
           - 3.times do
@@ -205,7 +205,7 @@
       .container
         .sec-title.p-b-60
           %h3.m-text5.t-center
-            Featured Products
+            Productos
         / Slide2
         .wrap-slick2
           .slick2
@@ -213,7 +213,7 @@
               .item-slick2.p-l-15.p-r-15
                 .block2
                   .block2-img.wrap-pic-w.of-hidden.pos-relative.block2-labelnew
-                    = image_tag product.cover_image
+                    = image_tag product.uploads.first
                     .block2-overlay.trans-0-4
                       %a.block2-btn-addwishlist.hov-pointer.trans-0-4{:href => "#"}
                         %i.icon-wishlist.icon_heart_alt{"aria-hidden" => "true"}
@@ -237,17 +237,13 @@
           .modal-body
             = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
               .field
-                = f.label :email
+                %label Correo Electronico
                 %br/
-                = f.email_field :email, autofocus: true, autocomplete: "email"
+                = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
               .field
-                = f.label :password
+                %label Contraseña
                 %br/
-                = f.password_field :password, autocomplete: "current-password"
-              - if devise_mapping.rememberable?
-                .field
-                  = f.check_box :remember_me
-                  = f.label :remember_me
+                = f.password_field :password, autocomplete: "current-password", class: 'form-control'
               .actions
                 = f.submit "Entrar", class: 'p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4'
             = render "devise/shared/links"
@@ -262,20 +258,28 @@
             = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
               = devise_error_messages!
               .field
-                = f.label :email
-                %br/
-                = f.email_field :email, autofocus: true, autocomplete: "email"
+                %label Nombre Completo
+                %br
+                = f.input :fullname, autofocus: true, label: false, class: 'form-control'
               .field
-                = f.label :password
+                %label Cédula de Identidad
+                %br
+                = f.input :dni, label: false, input_html: { min: '0' }, class: 'form-control'
+              .field
+                %label Correo Electrónico
+                %br
+                = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+              .field
+                %label Contraseña
                 - if @minimum_password_length
                   %em
                     (#{@minimum_password_length} characters minimum)
                 %br/
-                = f.password_field :password, autocomplete: "new-password"
+                = f.password_field :password, autocomplete: "new-password", class: 'form-control'
               .field
-                = f.label :password_confirmation
+                %label Confirmación de contraseña
                 %br/
-                = f.password_field :password_confirmation, autocomplete: "new-password"
+                = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
               .actions
                 = f.submit "Registrar", class: 'p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4'
     / Footer

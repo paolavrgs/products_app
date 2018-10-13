@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @cotization.user
+%p
+  %b Product:
+  = @cotization.product
+%p
+  %b Quantity:
+  = @cotization.quantity
+
+= link_to 'Edit', edit_cotization_path(@cotization)
+\|
+= link_to 'Back', cotizations_path

@@ -5,3 +5,12 @@
   margin-left: 25%;
   padding: 20px;
 }
+
+.show-links {
+  display: inline-flex;
+  float: right;
+
+  li {
+    margin: 10px;
+  }
+}

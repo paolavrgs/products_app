@@ -1,14 +1,17 @@
--# frozen_string_literal: true
-= simple_form_for [:admin, @product] do |f|
+= simple_form_for [:admin, @product], html: { class: 'leave-comment' } do |f|
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
-  .form-inputs
-    = f.file_field :cover_image
-    = f.input :title
-    = f.input :description
-    = f.input :price
+  .size15.m-b-20
+    = f.input :title, label: false, placeholder: 'Titulo del Producto', input_html: {class: 's-text7 p-l-22 p-r-22'}
+  .size15.m-b-20
+    = f.input :description, label: false, placeholder: 'Descripción del Producto', input_html: {class: 's-text7 p-l-22 p-r-22'}
+  .size15.m-b-20
+    = f.input :price, label: false, placeholder: 'Precio del Producto', input_html: {min: '0', class: 's-text7 p-l-22 p-r-22'}
+  .size15.m-b-20
+    = f.input :stock, label: false, placeholder: 'Cantidad de Productos en Inventario', input_html: {min: '0', class: 's-text7 p-l-22 p-r-22'}
+  .size15.m-b-20
+    %label.s-text6 Multiples fotos
     = f.file_field :uploads, multiple: true
-
-  .form-actions
-    = f.button :submit
+  %div
+    = f.button :submit, class: 'float-right p-l-15 p-r-15 p-t-8 p-b-8 bo-rad-23 bg0 hov7 trans-0-4'

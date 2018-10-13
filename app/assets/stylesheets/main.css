@@ -100,15 +100,12 @@ ul, li {
 
 
 /* ------------------------------------ */
-input {
+input, textarea{
 	outline: none;
   border: 1px solid #c0c0c0 !important;
   border-radius: 5px;
   padding: 5px 8px;
-}
-
-textarea {
-  outline: none;
+  resize: none;
 }
 
 .modal-content {

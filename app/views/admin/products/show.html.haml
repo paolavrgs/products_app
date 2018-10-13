@@ -1,22 +1,33 @@
-%p#notice= notice
+.row
+  .col-lg-6
+    = link_to admin_products_path do
+      %i.fa.fa-arrow-left
+      Volver
+    %h4.product-detail-name.m-text16.p-b-13
+      = @product.title
+    %span.m-text17.p-b-13
+      = number_to_currency(@product.price)
+    %span.s-text3.p-b-10
+      Cantidad disponible: 
+      = @product.stock
+    %p.s-text3.p-t-10
+      = @product.description
+  .col-lg-6
+    %ul.show-links
+      %li
+        = link_to edit_admin_product_path(@product), class: 's-text19' do
+          %i.fa.fa-pencil
+          Editar
+      %li                    
+        = link_to admin_product_path(@product), method: :delete, data: { confirm: 'Estás seguro?' }, class: 's-text19' do
+          %i.fa.fa-trash
+          Eliminar
 
-= image_tag @product.cover_image.variant(resize: "200x200" )
-
-%p
-  %b Title:
-  = @product.title
-%p
-  %b Description:
-  = @product.description
-%p
-  %b Price:
-  = @product.price
-
-- @product.uploads.each do |upload|
-  - if upload.variable?
-    = image_tag upload.variant(resize: "200x200" )
-  - elsif upload.previewable?
-    = image_tag upload.preview(resize: "200x200" )
-
-= link_to 'Edit', edit_admin_product_path(@product)
-= link_to 'Back', admin_products_path
+.m-b-50
+.wrap-slick3.flex-sb.flex-w
+  .wrap-slick3-dots
+  .slick3
+    - @product.uploads.each do |upload|
+      .item-slick3{"data-thumb" => "#{rails_blob_url(upload)}"}
+        .wrap-pic-w
+          = image_tag upload
