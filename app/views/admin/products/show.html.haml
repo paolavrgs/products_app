@@ -7,9 +7,14 @@
       = @product.title
     %span.m-text17.p-b-13
       = number_to_currency(@product.price)
+    %br/
     %span.s-text3.p-b-10
       Cantidad disponible: 
-      = @product.stock
+      = @general_counter
+    %br/
+    %span.s-text3.p-b-10
+      Vendidos:
+      = @cotizations_count
     %p.s-text3.p-t-10
       = @product.description
   .col-lg-6

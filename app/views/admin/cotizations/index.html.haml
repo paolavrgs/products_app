@@ -1,0 +1,58 @@
+-# %h1 Listing cotizations
+
+-# %table
+-#   %thead
+-#     %tr
+-#       %th User
+-#       %th Product
+-#       %th Quantity
+-#       %th
+-#       %th
+-#       %th
+
+-#   %tbody
+-#     - @cotizations.each do |cotization|
+-#       %tr
+-#         %td= cotization.user
+-#         %td= cotization.product
+-#         %td= cotization.quantity
+-#         %td= link_to 'Show', admin_cotization_path(cotization)
+-#         %td= link_to 'Edit', edit_admin_cotization_path(cotization)
+-#         %td= link_to 'Destroy', admin_cotization_path(cotization), method: :delete, data: { confirm: 'Are you sure?' }
+
+-# %br
+
+-# = link_to 'New Cotization', new_admin_cotization_path
+= link_to 'Nuevo Producto', new_admin_product_path, class: 'float-right p-l-15 p-r-15 p-t-8 p-b-8 bo-rad-23 bg0 hov7 trans-0-4'
+%section.cart.bgwhite.p-t-70.p-b-100
+  .container
+    .container-table-cart.pos-relative
+      .wrap-table-shopping-cart.bgwhite
+        %table.table-shopping-cart
+          %tr.table-head
+            %th Imagen
+            %th Producto
+            %th Descripción
+            %th Cantidad en Stock
+            %th Precio
+            %th
+          - @products.each do |product|
+            %tr.table-row
+              %td
+                .cart-img-product.b-rad-4.o-f-hidden
+                  = image_tag product.uploads.first
+              %td= product.title
+              %td= product.description.truncate_words(10)
+              %td= product.stock
+              %td= number_to_currency(product.price, locale: :en)
+              %td
+                %ul
+                  %li
+                    = link_to admin_product_path(product), class: 's-text19' do
+                      %i.fa.fa-eye
+                  %li
+                    = link_to edit_admin_product_path(product), class: 's-text19' do
+                      %i.fa.fa-pencil
+                  %li                    
+                    = link_to admin_product_path(product), method: :delete, data: { confirm: 'Estás seguro?' }, class: 's-text19' do
+                      %i.fa.fa-trash

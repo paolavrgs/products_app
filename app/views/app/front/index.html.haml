@@ -1,10 +1,10 @@
 !!!
 %html{:lang => "en"}
   %head
+    %title Home
     %meta{:charset => "UTF-8"}
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
-    %title Home
     %link{href: "assets/icons/favicon.png", rel: "icon", type: "image/png"}
     %link{:href => "assets/bootstrap.min.css", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "assets/animate.css", :rel => "stylesheet", :type => "text/css"}/
@@ -28,116 +28,25 @@
               - unless current_user.nil?
                 = current_user.email
             %a.header-wrapicon1.dis-block{:href => "#{current_user.nil? || current_user.has_role?(:client) ? '' : '/admin' }"}
-              %img.header-icon1{:alt => "ICON", :src => "assets/icons/icon-header-01.png"}/
-            -# %span.linedivide1
-            -# .header-wrapicon2
-            -#   %img.header-icon1.js-show-header-dropdown{:alt => "ICON", :src => "assets/icons/icon-header-02.png"}/
-            -#   %span.header-icons-noti 0
-            -#   / Header cart noti
-            -#   .header-cart.header-dropdown
-            -#     %ul.header-cart-wrapitem
-            -#       %li.header-cart-item
-            -#         .header-cart-item-img
-            -#           %img{:alt => "IMG", :src => "assets/item-cart-01.jpg"}/
-            -#         .header-cart-item-txt
-            -#           %a.header-cart-item-name{:href => "#"}
-            -#             White Shirt With Pleat Detail Back
-            -#           %span.header-cart-item-info
-            -#             1 x $19.00
-            -#       %li.header-cart-item
-            -#         .header-cart-item-img
-            -#           %img{:alt => "IMG", :src => "assets/item-cart-02.jpg"}/
-            -#         .header-cart-item-txt
-            -#           %a.header-cart-item-name{:href => "#"}
-            -#             Converse All Star Hi Black Canvas
-            -#           %span.header-cart-item-info
-            -#             1 x $39.00
-            -#       %li.header-cart-item
-            -#         .header-cart-item-img
-            -#           %img{:alt => "IMG", :src => "assets/item-cart-03.jpg"}/
-            -#         .header-cart-item-txt
-            -#           %a.header-cart-item-name{:href => "#"}
-            -#             Nixon Porter Leather Watch In Tan
-            -#           %span.header-cart-item-info
-            -#             1 x $17.00
-            -#     .header-cart-total
-            -#       Total: $75.00
-            -#     .header-cart-buttons
-            -#       .header-cart-wrapbtn
-            -#         / Button
-            -#         %a.flex-c-m.size1.bg1.bo-rad-20.hov1.s-text1.trans-0-4{:href => "cart.html"}
-            -#           View Cart
-            -#       .header-cart-wrapbtn
-            -#         / Button
-            -#         %a.flex-c-m.size1.bg1.bo-rad-20.hov1.s-text1.trans-0-4{:href => "#"}
-            -#           Check Out
+              %img.header-icon1{:alt => "ICON", :src => "assets/icons/icon-header-01.png"}
         .wrap_header
-          / Logo
           %a.logo{:href => "index.html"}
-            %img{:alt => "IMG-LOGO", :src => "assets/logo_rosado.png"}/
-          / Menu
+            %img{:alt => "IMG-LOGO", :src => "assets/logo_rosado.png"}
           .wrap-menu
             .main_menu
               - if user_signed_in?
                 = link_to 'Cerrar Sesión', destroy_session_path(current_user), method: :delete, class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4"
               - else
-                -# = link_to 'Sign up', new_user_registration_path, class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4"
                 %button{ href: '#', "data-toggle" => "modal", "data-target" => "#signupModal", class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4" } Registrar
                 %button{ href: '#', "data-toggle" => "modal", "data-target" => "#loginModal", class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4" } Iniciar Sesión
-                -# = link_to 'Login', new_user_session_path, class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bgwhite hov1 trans-0-4"
       / Header Mobile
       .wrap_header_mobile
-        / Logo moblie
         %a.logo-mobile{:href => "index.html"}
-          %img{:alt => "IMG-LOGO", :src => "assets/logo_rosado.png"}/
-        / Button show menu
+          %img{:alt => "IMG-LOGO", :src => "assets/logo_rosado.png"}
         .btn-show-menu
-          / Header Icon mobile
           .header-icons-mobile
             %a.header-wrapicon1.dis-block{:href => "#"}
-              %img.header-icon1{:alt => "ICON", :src => "assets/icons/icon-header-01.png"}/
-            %span.linedivide2
-            .header-wrapicon2
-              %img.header-icon1.js-show-header-dropdown{:alt => "ICON", :src => "assets/icons/icon-header-02.png"}/
-              %span.header-icons-noti 0
-              / Header cart noti
-              .header-cart.header-dropdown
-                %ul.header-cart-wrapitem
-                  %li.header-cart-item
-                    .header-cart-item-img
-                      %img{:alt => "IMG", :src => "assets/item-cart-01.jpg"}/
-                    .header-cart-item-txt
-                      %a.header-cart-item-name{:href => "#"}
-                        White Shirt With Pleat Detail Back
-                      %span.header-cart-item-info
-                        1 x $19.00
-                  %li.header-cart-item
-                    .header-cart-item-img
-                      %img{:alt => "IMG", :src => "assets/item-cart-02.jpg"}/
-                    .header-cart-item-txt
-                      %a.header-cart-item-name{:href => "#"}
-                        Converse All Star Hi Black Canvas
-                      %span.header-cart-item-info
-                        1 x $39.00
-                  %li.header-cart-item
-                    .header-cart-item-img
-                      %img{:alt => "IMG", :src => "assets/item-cart-03.jpg"}/
-                    .header-cart-item-txt
-                      %a.header-cart-item-name{:href => "#"}
-                        Nixon Porter Leather Watch In Tan
-                      %span.header-cart-item-info
-                        1 x $17.00
-                .header-cart-total
-                  Total: $75.00
-                .header-cart-buttons
-                  .header-cart-wrapbtn
-                    / Button
-                    %a.flex-c-m.size1.bg1.bo-rad-20.hov1.s-text1.trans-0-4{:href => "cart.html"}
-                      View Cart
-                  .header-cart-wrapbtn
-                    / Button
-                    %a.flex-c-m.size1.bg1.bo-rad-20.hov1.s-text1.trans-0-4{:href => "#"}
-                      Check Out
+              %img.header-icon1{:alt => "ICON", :src => "assets/icons/icon-header-01.png"}
           .btn-show-menu-mobile.hamburger.hamburger--squeeze
             %span.hamburger-box
               %span.hamburger-inner
@@ -222,7 +131,7 @@
                         %button.flex-c-m.size1.bg4.bo-rad-23.hov1.s-text1.trans-0-4
                           Add to Cart
                   .block2-txt.p-t-20
-                    %a.block2-name.dis-block.s-text3.p-b-5{:href => "product-detail.html"}
+                    = link_to product_path(product), class: 'block2-name dis-block s-text3 p-b-5' do
                       = product.title
                     %span.block2-price.m-text6.p-r-5
                       = number_to_currency(product.price, locale: :en)

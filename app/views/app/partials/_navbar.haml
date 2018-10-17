@@ -1,0 +1,80 @@
+%header.header1
+  .container-menu-header
+    .topbar
+      .topbar-social
+        %a.topbar-social-item.fa.fa-facebook{:href => "#"}
+        %a.topbar-social-item.fa.fa-instagram{:href => "#"}
+        %a.topbar-social-item.fa.fa-pinterest-p{:href => "#"}
+        %a.topbar-social-item.fa.fa-snapchat-ghost{:href => "#"}
+        %a.topbar-social-item.fa.fa-youtube-play{:href => "#"}
+      .topbar-child2
+        %span.topbar-email
+          - unless current_user.nil?
+            = current_user.email
+        %a.header-wrapicon1.dis-block{:href => "#{current_user.nil? || current_user.has_role?(:client) ? '' : '/admin' }"}
+          %img.header-icon1{:alt => "ICON", :src => "assets/icons/icon-header-01.png"}
+    .wrap_header
+      %a.logo{:href => "index.html"}
+        %img{:alt => "IMG-LOGO", :src => "assets/logo_rosado.png"}
+      .wrap-menu
+        .main_menu
+          - if user_signed_in?
+            = link_to 'Cerrar Sesión', destroy_session_path(current_user), method: :delete, class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4"
+          - else
+            %button{ href: '#', "data-toggle" => "modal", "data-target" => "#signupModal", class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4" } Registrar
+            %button{ href: '#', "data-toggle" => "modal", "data-target" => "#loginModal", class: "p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4" } Iniciar Sesión
+  / Header Mobile
+  .wrap_header_mobile
+    %a.logo-mobile{:href => "index.html"}
+      %img{:alt => "IMG-LOGO", :src => "assets/logo_rosado.png"}
+    .btn-show-menu
+      .header-icons-mobile
+        %a.header-wrapicon1.dis-block{:href => "#"}
+          %img.header-icon1{:alt => "ICON", :src => "assets/icons/icon-header-01.png"}
+      .btn-show-menu-mobile.hamburger.hamburger--squeeze
+        %span.hamburger-box
+          %span.hamburger-inner
+  / Menu Mobile
+  .wrap-side-menu
+    %nav.side-menu
+      %ul.main-menu
+        %li.item-topbar-mobile.p-l-20.p-t-8.p-b-8
+          %span.topbar-child1
+            Free shipping for standard order over $100
+        %li.item-topbar-mobile.p-l-20.p-t-8.p-b-8
+          .topbar-child2-mobile
+            %span.topbar-email
+              fashe@example.com
+            .topbar-language.rs1-select2
+              %select.selection-1{:name => "time"}
+                %option USD
+                %option EUR
+        %li.item-topbar-mobile.p-l-10
+          .topbar-social-mobile
+            %a.topbar-social-item.fa.fa-facebook{:href => "#"}
+            %a.topbar-social-item.fa.fa-instagram{:href => "#"}
+            %a.topbar-social-item.fa.fa-pinterest-p{:href => "#"}
+            %a.topbar-social-item.fa.fa-snapchat-ghost{:href => "#"}
+            %a.topbar-social-item.fa.fa-youtube-play{:href => "#"}
+        %li.item-menu-mobile
+          %a{:href => "index.html"} Home
+          %ul.sub-menu
+            %li
+              %a{:href => "index.html"} Homepage V1
+            %li
+              %a{:href => "home-02.html"} Homepage V2
+            %li
+              %a{:href => "home-03.html"} Homepage V3
+          %i.arrow-main-menu.fa.fa-angle-right{"aria-hidden" => "true"}
+        %li.item-menu-mobile
+          %a{:href => "product.html"} Shop
+        %li.item-menu-mobile
+          %a{:href => "product.html"} Sale
+        %li.item-menu-mobile
+          %a{:href => "cart.html"} Features
+        %li.item-menu-mobile
+          %a{:href => "blog.html"} Blog
+        %li.item-menu-mobile
+          %a{:href => "about.html"} About
+        %li.item-menu-mobile
+          %a{:href => "contact.html"} Contact

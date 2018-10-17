@@ -22,11 +22,11 @@
             %nav.menu
               %ul.main_menu
                 %li
-                  %a{href: "/"} Home
+                  %a{href: "/admin"} Home
                 %li
                   = link_to 'Productos', admin_products_path
                 %li
-                  %a{href: "#"} Cotizaciones
+                  = link_to 'Cotizaciones', admin_cotizations_path
         .bottombar.flex-col-c.p-b-65
           %a.logo3{href: "/"}
             %img{alt: "IMG-LOGO", src: "../../assets/moccadmin/mocca-logo_mocca.png"}
