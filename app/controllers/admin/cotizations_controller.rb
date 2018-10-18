@@ -24,33 +24,33 @@ module Admin
   
     # POST /cotizations
     # POST /cotizations.json
-    def create
-      @cotization = Cotization.new(cotization_params)
+    # def create
+    #   @cotization = Cotization.new(cotization_params)
   
-      respond_to do |format|
-        if @cotization.save
-          format.html { redirect_to [:admin, @cotization], notice: 'Cotization was successfully created.' }
-          format.json { render :show, status: :created, location: @cotization }
-        else
-          format.html { render :new }
-          format.json { render json: @cotization.errors, status: :unprocessable_entity }
-        end
-      end
-    end
+    #   respond_to do |format|
+    #     if @cotization.save
+    #       format.html { redirect_to product_path(@cotization.product), notice: 'Su producto ha sido cotizado, pronto recibirá un correo de nuestra parte.' }
+    #       format.json { render :show, status: :created, location: @cotization }
+    #     else
+    #       format.html { redirect_to product_path(@cotization.product), notice: "Debe cotizar productos disponibles"  }
+    #       format.json { render json: @cotization.errors, status: :unprocessable_entity }
+    #     end
+    #   end
+    # end
   
     # PATCH/PUT /cotizations/1
     # PATCH/PUT /cotizations/1.json
-    def update
-      respond_to do |format|
-        if @cotization.update(cotization_params)
-          format.html { redirect_to [:admin, @cotization], notice: 'Cotization was successfully updated.' }
-          format.json { render :show, status: :ok, location: @cotization }
-        else
-          format.html { render :edit }
-          format.json { render json: @cotization.errors, status: :unprocessable_entity }
-        end
-      end
-    end
+    # def update
+    #   respond_to do |format|
+    #     if @cotization.update(cotization_params)
+    #       format.html { redirect_to [:admin, @cotization], notice: 'Cotization was successfully updated.' }
+    #       format.json { render :show, status: :ok, location: @cotization }
+    #     else
+    #       format.html { render :edit }
+    #       format.json { render json: @cotization.errors, status: :unprocessable_entity }
+    #     end
+    #   end
+    # end
   
     # DELETE /cotizations/1
     # DELETE /cotizations/1.json

@@ -1,0 +1,56 @@
+/ Modal
+#loginModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      .modal-header
+        %h5#exampleModalLabel.modal-title Inicio de Sesión
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+      .modal-body
+        = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .field
+            %label Correo Electronico
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+          .field
+            %label Contraseña
+            %br/
+            = f.password_field :password, autocomplete: "current-password", class: 'form-control'
+          .actions
+            = f.submit "Entrar", class: 'p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4'
+        = render "devise/shared/links"
+#signupModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      .modal-header
+        %h5#exampleModalLabel.modal-title Registro de Usuario
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+      .modal-body
+        = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = devise_error_messages!
+          .field
+            %label Nombre Completo
+            %br
+            = f.input :fullname, autofocus: true, label: false, class: 'form-control'
+          .field
+            %label Cédula de Identidad
+            %br
+            = f.input :dni, label: false, input_html: { min: '0' }, class: 'form-control'
+          .field
+            %label Correo Electrónico
+            %br
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+          .field
+            %label Contraseña
+            - if @minimum_password_length
+              %em
+                (#{@minimum_password_length} characters minimum)
+            %br/
+            = f.password_field :password, autocomplete: "new-password", class: 'form-control'
+          .field
+            %label Confirmación de contraseña
+            %br/
+            = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
+          .actions
+            = f.submit "Registrar", class: 'p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4'

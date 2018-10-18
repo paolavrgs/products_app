@@ -10,11 +10,11 @@
     %br/
     %span.s-text3.p-b-10
       Cantidad disponible: 
-      = @general_counter
+      = @product.stock - @product.cotizations.sum(:quantity)
     %br/
     %span.s-text3.p-b-10
       Vendidos:
-      = @cotizations_count
+      = @product.cotizations.sum(:quantity)
     %p.s-text3.p-t-10
       = @product.description
   .col-lg-6

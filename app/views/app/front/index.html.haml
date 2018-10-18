@@ -128,143 +128,29 @@
                         %i.icon-wishlist.icon_heart_alt{"aria-hidden" => "true"}
                         %i.icon-wishlist.icon_heart.dis-none{"aria-hidden" => "true"}
                       .block2-btn-addcart.w-size1.trans-0-4
-                        %button.flex-c-m.size1.bg4.bo-rad-23.hov1.s-text1.trans-0-4
-                          Add to Cart
+                        = link_to product_path(product) do
+                          %button.flex-c-m.size1.bg4.bo-rad-23.hov1.s-text1.trans-0-4
+                            Ver más
                   .block2-txt.p-t-20
                     = link_to product_path(product), class: 'block2-name dis-block s-text3 p-b-5' do
                       = product.title
                     %span.block2-price.m-text6.p-r-5
                       = number_to_currency(product.price, locale: :en)
-    / Modal
-    #loginModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "-1"}
-      .modal-dialog{:role => "document"}
-        .modal-content
-          .modal-header
-            %h5#exampleModalLabel.modal-title Inicio de Sesión
-            %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
-              %span{"aria-hidden" => "true"} ×
-          .modal-body
-            = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-              .field
-                %label Correo Electronico
-                %br/
-                = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
-              .field
-                %label Contraseña
-                %br/
-                = f.password_field :password, autocomplete: "current-password", class: 'form-control'
-              .actions
-                = f.submit "Entrar", class: 'p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4'
-            = render "devise/shared/links"
-    #signupModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "-1"}
-      .modal-dialog{:role => "document"}
-        .modal-content
-          .modal-header
-            %h5#exampleModalLabel.modal-title Registro de Usuario
-            %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
-              %span{"aria-hidden" => "true"} ×
-          .modal-body
-            = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-              = devise_error_messages!
-              .field
-                %label Nombre Completo
-                %br
-                = f.input :fullname, autofocus: true, label: false, class: 'form-control'
-              .field
-                %label Cédula de Identidad
-                %br
-                = f.input :dni, label: false, input_html: { min: '0' }, class: 'form-control'
-              .field
-                %label Correo Electrónico
-                %br
-                = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
-              .field
-                %label Contraseña
-                - if @minimum_password_length
-                  %em
-                    (#{@minimum_password_length} characters minimum)
-                %br/
-                = f.password_field :password, autocomplete: "new-password", class: 'form-control'
-              .field
-                %label Confirmación de contraseña
-                %br/
-                = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
-              .actions
-                = f.submit "Registrar", class: 'p-l-15 p-r-15 p-t-8 p-b-8 flex-c-m bo-rad-23 bg0 hov7 trans-0-4'
     / Footer
     %footer.bg6.p-t-45.p-b-43.p-l-45.p-r-45
       .flex-w.p-b-90
-        .w-size6.p-t-30.p-l-15.p-r-15.respon3
+        .w-size6.p-t-30.p-l-15.p-r-15
           %h4.s-text12.p-b-30
-            GET IN TOUCH
+            Contactos
           %div
             %p.s-text7.w-size27
-              Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+              Puedes encontrarnos en 8th floor, 379 Hudson St, New York, NY 10018 o llamarnos al (+1) 96 716 6879
             .flex-m.p-t-30
               %a.fs-18.color1.p-r-20.fa.fa-facebook{:href => "#"}
               %a.fs-18.color1.p-r-20.fa.fa-instagram{:href => "#"}
               %a.fs-18.color1.p-r-20.fa.fa-pinterest-p{:href => "#"}
               %a.fs-18.color1.p-r-20.fa.fa-snapchat-ghost{:href => "#"}
               %a.fs-18.color1.p-r-20.fa.fa-youtube-play{:href => "#"}
-        .w-size7.p-t-30.p-l-15.p-r-15.respon4
-          %h4.s-text12.p-b-30
-            Categories
-          %ul
-            %li.p-b-9
-              %a.s-text7{:href => "#"}
-                Men
-            %li.p-b-9
-              %a.s-text7{:href => "#"}
-                Women
-            %li.p-b-9
-              %a.s-text7{:href => "#"}
-                Dresses
-            %li.p-b-9
-              %a.s-text7{:href => "#"}
-                Sunglasses
-        .w-size7.p-t-30.p-l-15.p-r-15.respon4
-          %h4.s-text12.p-b-30
-            Links
-          %ul
-            %li.p-b-9
-              %a.s-text7{:href => "#"}
-                Search
-            %li.p-b-9
-              %a.s-text7{:href => "#"}
-                About Us
-            %li.p-b-9
-              %a.s-text7{:href => "#"}
-                Contact Us
-            %li.p-b-9
-              %a.s-text7{:href => "#"}
-                Returns
-        .w-size7.p-t-30.p-l-15.p-r-15.respon4
-          %h4.s-text12.p-b-30
-            Help
-          %ul
-            %li.p-b-9
-              %a.s-text7{:href => "#"}
-                Track Order
-            %li.p-b-9
-              %a.s-text7{:href => "#"}
-                Returns
-            %li.p-b-9
-              %a.s-text7{:href => "#"}
-                Shipping
-            %li.p-b-9
-              %a.s-text7{:href => "#"}
-                FAQs
-        .w-size8.p-t-30.p-l-15.p-r-15.respon3
-          %h4.s-text12.p-b-30
-            Newsletter
-          %form
-            .effect1.w-size9
-              %input.s-text7.bg6.w-full.p-b-5{:name => "email", :placeholder => "email@example.com", :type => "text"}/
-              %span.effect1-line
-            .w-size2.p-t-20
-              / Button
-              %button.flex-c-m.size2.bg4.bo-rad-23.hov1.m-text3.trans-0-4
-                Subscribe
       .t-center.p-l-15.p-r-15
         %a{:href => "#"}
           %img.h-size2{:alt => "IMG-PAYPAL", :src => "assets/icons/paypal.png"}/
@@ -277,16 +163,17 @@
         %a{:href => "#"}
           %img.h-size2{:alt => "IMG-DISCOVER", :src => "assets/icons/discover.png"}/
         .t-center.s-text8.p-t-20
-          Copyright © 2018 All rights reserved. | This template is made with
+          Copyright © 2018 All rights reserved. | Diseñado con
           %i.fa.fa-heart-o{"aria-hidden" => "true"}
-          by
-          %a{:href => "https://colorlib.com", :target => "_blank"} Colorlib
+          por
+          %a{:href => "https://colorlib.com", :target => "_blank"} Moccadmin
     / Back to top
     #myBtn.btn-back-to-top.bg0-hov
       %span.symbol-btn-back-to-top
         %i.fa.fa-angle-double-up{"aria-hidden" => "true"}
     / Container Selection1
     #dropDownSelect1
+    = render 'app/partials/modal'
     %script{:src => "https://use.fontawesome.com/70a3cb5d53.js"}
     %script{:src => "https://code.jquery.com/jquery-3.3.1.min.js", :type => "text/javascript"}
     %script{:src => "assets/animsition.min.js", :type => "text/javascript"}

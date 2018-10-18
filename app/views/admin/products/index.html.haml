@@ -41,7 +41,7 @@
                   = image_tag product.uploads.first
               %td= product.title
               %td= product.description.truncate_words(10)
-              %td= product.stock
+              %td= product.stock - product.cotizations.sum(:quantity)
               %td= number_to_currency(product.price, locale: :en)
               %td
                 %ul

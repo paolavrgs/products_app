@@ -10,7 +10,7 @@ puts 'Role Admin created'
 Role.create!(name: 'client')
 puts 'Role Client created'
 
-admin = User.new(email: 'paolavrgsm@gmail.com', password: '12345678', password_confirmation: '12345678')
+admin = User.new(email: 'paolavrgsm@gmail.com', password: '12345678', password_confirmation: '12345678', fullname: 'Administrador', dni: '1234')
 if admin.save
   puts 'User admin has been created'
   admin.add_role :admin

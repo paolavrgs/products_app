@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   scope module: :app do
     get '/', to: 'front#index', as: :root
     get '/product/:product_id', to: 'front#product', as: :product
+    resources :cotizations
   end
   
   namespace :admin do

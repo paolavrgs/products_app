@@ -3,7 +3,7 @@ module Admin
 
     def index
       @products = Product.all
-      @cotizations_count = Cotization.all.map(&:quantity).reduce(:+)
+      @cotizations_count = Cotization.all.map(&:quantity).reduce(:+) || 0
       @general_counter = Product.all.sum(:stock) - @cotizations_count
     end
 

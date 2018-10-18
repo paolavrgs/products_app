@@ -11,7 +11,7 @@ module Admin
     # GET /products/1
     # GET /products/1.json
     def show
-      @cotizations_count = Cotization.all.map(&:quantity).reduce(:+)
+      @cotizations_count = Cotization.all.map(&:quantity).reduce(:+) || 0
       @general_counter = Product.all.sum(:stock) - @cotizations_count
     end
   
