@@ -1,14 +1,22 @@
-%p#notice= notice
-
-%p
-  %b User:
-  = @cotization.user
-%p
-  %b Product:
-  = @cotization.product
-%p
-  %b Quantity:
+= link_to admin_products_path do
+  %i.fa.fa-arrow-left
+  Volver
+%h4.product-detail-name.m-text17.p-b-13.p-t-20
+  Producto Cotizado:
+  = @cotization.product.title
+  %br/
+  = image_tag @cotization.product.uploads.first, style: 'width: 200px;'
+%span.m-text15.p-b-13
+  Cotizado por:
+  = @cotization.user.fullname
+  %br/
+  = @cotization.user.email
+%br  
+%span.s-text3.p-b-10
+  Cantidad del producto cotizada:
   = @cotization.quantity
-
--# = link_to 'Edit', admin_edit_cotization_path(@cotization)
-= link_to 'Back', admin_cotizations_path
+%br/
+%span.s-text3.p-b-10
+  Fecha:
+  = @cotization.created_at.strftime("%d/%m/%Y")
+%br

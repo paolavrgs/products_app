@@ -1,6 +1,15 @@
-%h4.m-text26.p-b-36.p-t-15 Estadisticas de Inventario
-.chart
-  %canvas{ id: "myChart" }
+%h4.m-text26.p-b-36.p-t-15 Estadisticas
+.d-flex
+  .best_seller
+    - max_id = @cotizations.map { |d| d[:product_id] }.max
+    %strong.m-text15.p-b-36.p-t-15
+      Producto más vendido:
+    %br/
+    %span.m-text26.p-b-36.p-t-15
+      = Product.find(max_id).title
+    = image_tag Product.find(max_id).uploads.first
+  .chart.m-t-50
+    %canvas{ id: "myChart" }
 
 %script{ src: 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js' }
 :javascript
@@ -13,12 +22,12 @@
               label: '# of Votes',
               data: [#{@general_counter}, #{@cotizations_count}],
               backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)'
+                  'rgba(36, 165, 77, 0.6)',
+                  'rgba(230, 85, 64, 0.8)',
               ],
               borderColor: [
-                  'rgba(255,99,132,1)',
-                  'rgba(54, 162, 235, 1)'
+                  'rgb(36, 165, 77)',
+                  'rgb(230, 85, 64)',
               ],
               borderWidth: 1
           }]
@@ -35,8 +44,20 @@
       }
   });
 :scss
+  .best_seller {
+    width: 30%;
+    box-shadow: 1px 1px 5px #c0c0c0;
+    padding: 20px;
+    border-radius: 15px;
+    margin-right: 5%;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
   .chart {
-    width: 100%;
+    width: 60%;
     height: 500px;
 
     canvas {
