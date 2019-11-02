@@ -14,7 +14,7 @@ gem 'sass-rails', '~> 5.0'
 
 gem 'haml-rails', '1.0'
 gem 'haml', '5.0.4'
-gem 'devise', '4.5'
+gem 'devise', '4.7.1'
 gem 'rolify', '5.2'
 gem 'simple_form', '4.0.1'
 gem 'mini_magick', '4.9.2'
